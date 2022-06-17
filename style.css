@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%; /*1rem = 10px*/
+
+    --hue: 170;
+    --brand-green: hsla(var(--hue), 100%, 26%, 1);
+    --brand-green-light: hsla(calc(var(--hue) - 22), 23%, 89%, 1);
+    --brand-green-light2: hsla(calc(var(--hue) + 10), 14%, 97%, 1);
+    --brand-beige: hsla(39, 100%, 97%, 1);
+    --brand-green-hover: hsla(var(--hue), 100%, 14%, 1);
+    --gray-headline: hsla(210, 11%, 15%, 1);
+    --gray-paragraph: hsla(210, 9%, 31%, 1);
+    --white: hsla(0, 0%, 100%, 1);
+}
+
+html {
+    scroll-behavior: smooth;
+
+    height: 100vh;
+    width: 100vw;
+}
+
+body {
+    font-family: "DM Sans";
+    font-size: 1.6rem;
+
+    background-color: var(--brand-green-light);
+
+    align-items: center;
+}
+
+h1 {
+    font-size: 1.4rem;
+    transform: uppercase;
+    color: var(--brand-green);
+}
+
+h2 {
+    font-size: 3rem;
+    color: var(--gray-headline);
+}
+
+p {
+    font-size: 1.8rem;
+    color: var(--gray-paragraph);
+}
+
+img {
+    max-width: 100%;
+}
+
+/* NAVIGATION --------------------------------------------------------------------- */
+nav {
+    width: 100%;
+    padding: 1.6rem 2.4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+}
+
+nav.scroll {
+    background-color: var(--brand-green);
+}
+
+nav.scroll .logo path {
+    fill: white;
+}
+
+nav.scroll button path {
+    stroke: white;
+}
+
+nav .close-menu,
+.menu {
+    position: fixed;
+    visibility: hidden;
+}
+
+nav button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* MENU EXPANDED --------------------------------------------------------------------- */
+body.menu-expanded .close-menu,
+body.menu-expanded .menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+body.menu-expanded .open-menu {
+    opacity: 0;
+    visibility: hidden;
+}
+
+body.menu-expanded > :not(nav) {
+    display: none;
+}
+
+.menu {
+    transform: translateY(100%);
+}
+
+body.menu-expanded .menu {
+    top: 0;
+    left: 0;
+    background: var(--brand-green);
+
+    width: 100vw;
+    height: 100vh;
+
+    padding-top: 7.2rem;
+
+    transition: transform 300ms;
+    transform: translateY(0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body.menu-expanded .logo path {
+    fill: white;
+}
+
+body.menu-expanded button path {
+    stroke: white;
+}
+
+.menu ul:nth-child(1) {
+    display: flex;
+    flex-direction: column;
+    gap: 4.8rem;
+
+    margin-top: 6rem;
+
+    font-weight: 700;
+    font-size: 2.4rem;
+    line-height: 3.1rem;
+}
+
+body.menu-expanded .menu .links li a {
+    color: white;
+    text-decoration: none;
+}
+
+body.menu-expanded .menu .links {
+    list-style: none;
+    align-items: center;
+}
+
+body.menu-expanded .menu .social-media {
+    list-style: none;
+}
+
+body.menu-expanded .menu .social-media path{
+    fill: white;
+}
+
+body.menu-expanded .logo,
+body.menu-expanded button {
+    position: relative;
+    z-index: 100;
+}
+
+body.menu-expanded .menu .button {
+    display: block;
+    margin-top: 4.8rem;
+}
+
+body.menu-expanded .menu .social-media {
+    display: flex;
+    flex-direction: row;
+    gap: 3.2rem;
+
+    margin-top: 8rem;
+}
+
+/* HOME --------------------------------------------------------------------- */
+#home {
+    padding-block: 7.2rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-inline: 2.4rem;
+}
+
+#home h1 {
+    margin-top: 4.1rem;
+}
+
+#home h2 {
+    font-size: 3.4rem;
+    margin-top: 1.6rem;
+}
+
+#home p {
+    margin-top: 2.4rem;
+}
+
+#home .button {
+    margin-top: 3.2rem;
+}
+
+#home img {
+    margin-top: 6rem;
+    max-width: 26.1rem;
+}
+
+#home .stats {
+    width: 100%;
+    background-color: var(--brand-beige);
+    margin-inline: 2.4rem;
+    padding-block: 4rem;
+    list-style: none;
+    border: 1px solid var(--brand-green-light);
+    border-radius: 6px;
+}
+
+#home .stats .stat:not(:first-child) {
+    margin-top: 6rem;
+}
+
+#home .stats h2 {
+    font-size: 4.8rem;
+    margin-top: 0;
+}
+
+#home .stats p {
+    font-size: 1.6rem;
+    color: var(--brand-green);
+    margin-top: 0;
+}
