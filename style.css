@@ -25,8 +25,7 @@
 html {
     scroll-behavior: smooth;
 
-    height: 100vh;
-    width: 100vw;
+    /* não se usa propriedades de medida dentro do seletor 'html' */
 }
 
 body {
@@ -35,6 +34,8 @@ body {
 
     background-color: var(--brand-green-light);
 
+    
+    min-height: 100vh; /* Altura mínima da page*/
     /* align-items: center; SÒ FUNCIONA COM display:flex; ou display:grid;*/
 }
 
@@ -210,6 +211,7 @@ body.menu-expanded .menu .social-media {
 }
 
 #home .button {
+    display: flex; /* Ajusta a caixa da tag '<a>' para o tamanho do conteúdo, no caso a <img> */
     margin-top: 3.2rem;
 }
 
