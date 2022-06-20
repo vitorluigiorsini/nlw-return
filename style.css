@@ -1,17 +1,21 @@
+/* ==== importação das fontes Google ==== */
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap");
 
-/* ===== BASE ===== */
+/* ===== RESET_DOCUMENT ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* ===== ROOT CONFIG ===== */
+/* ===== ROOT_CONFIG ===== */
 :root {
   font-size: 62.5%; /*1rem = 10px*/
 
-  --hue: 170;
+  --nav-height: 7.2rem; /* define a altura da barra de navegação */
+
+  --hue: 170; /* Altera esquema de cores da página */
+
   --brand-green: hsla(var(--hue), 100%, 26%, 1);
   --brand-green-light: hsla(calc(var(--hue) - 22), 23%, 89%, 1);
   --brand-green-light2: hsla(calc(var(--hue) + 10), 14%, 97%, 1);
@@ -22,40 +26,39 @@
   --white: hsla(0, 0%, 100%, 1);
 }
 
+/* ==== BASE ==== */
+
 html {
   scroll-behavior: smooth;
-
-  /* não se usa propriedades de medida dentro do seletor 'html' */
 }
 
 body {
   font-family: "DM Sans";
   font-size: 1.6rem;
-
-  background-color: var(--brand-green-light);
-
-  
-  min-height: 100vh; /* Altura mínima da page*/
-
-  /* Alinhar página no centro */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  text-align: center;
+  color: var(--gray-paragraph);
 }
 
 h1 {
   font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.08rem;
   transform: uppercase;
   color: var(--brand-green);
 }
 
 h2 {
   font-size: 3rem;
+  font-weight: 700;
+  line-height: 3.9rem;
   color: var(--gray-headline);
 }
 
 p {
   font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 150%;
   color: var(--gray-paragraph);
 }
 
@@ -63,15 +66,32 @@ img {
   max-width: 100%;
 }
 
-/* NAVIGATION --------------------------------------------------------------------- */
-nav {
-  width: min(112rem, 100%); /* Limitando a largura da página */
+.wrapper {
+  width: min(39.9rem, 100%);
+  margin-inline: auto;
+  padding-inline: 2.4rem;
+}
 
-  padding: 1.6rem 2.4rem;
+.social-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3.2rem;
+}
+
+/* ==== NAVIGATION ==== */
+nav {
+  height: var(--nav-height);
+  width: 100vw;
+  display: flex;
+  position: fixed;
+  top: 0;
+}
+
+nav .wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
 }
 
 nav.scroll {
@@ -98,7 +118,7 @@ nav button {
   cursor: pointer;
 }
 
-/* MENU EXPANDED --------------------------------------------------------------------- */
+/* ==== MENU_EXPANDED ==== */
 body.menu-expanded .close-menu,
 body.menu-expanded .menu {
   opacity: 1;
@@ -192,16 +212,21 @@ body.menu-expanded .menu .social-media {
   margin-top: 8rem;
 }
 
-/* HOME --------------------------------------------------------------------- */
+/* ==== HOME ==== */
 #home {
-  padding-block: 7.2rem 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin-inline: 2.4rem;
+  padding-block: var(--nav-height) 0;
+}
 
-  max-width: 112rem; /* Limitando a largura do home */
+#home::before {
+  content: '';
+  width: 100%;
+  height: 108rem;
+  background-color: var(--brand-green-light);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
 }
 
 #home h1 {
@@ -218,17 +243,22 @@ body.menu-expanded .menu .social-media {
 }
 
 #home .button {
-  display: flex; /* Ajusta a caixa da tag '<a>' para o tamanho do conteúdo, no caso a <img> */
+  display: flex;
+  justify-content: center;
   margin-top: 3.2rem;
 }
 
 #home img {
+  display: flex;
+  margin-inline: auto;
   margin-top: 6rem;
   max-width: 26.1rem;
 }
 
 #home .stats {
   width: 100%;
+  /* width: 37.5rem; */
+
   background-color: var(--brand-beige);
   /* margin-inline: 2.4rem; */
   padding-block: 4rem;
