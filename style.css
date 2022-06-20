@@ -56,7 +56,7 @@ h2 {
 }
 
 p {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 400;
   line-height: 150%;
   color: var(--gray-paragraph);
@@ -72,10 +72,9 @@ img {
   padding-inline: 2.4rem;
 }
 
-.social-links {
+.social-media {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  list-style: none;
   gap: 3.2rem;
 }
 
@@ -148,7 +147,7 @@ body.menu-expanded .menu {
 
   padding-top: 7.2rem;
 
-  transition: transform 300ms;
+  transition: transform 400ms;
   transform: translateY(0);
   display: flex;
   flex-direction: column;
@@ -163,7 +162,7 @@ body.menu-expanded button path {
   stroke: white;
 }
 
-.menu ul:nth-child(1) {
+body.menu-expanded .menu .links {
   display: flex;
   flex-direction: column;
   gap: 4.8rem;
@@ -173,6 +172,9 @@ body.menu-expanded button path {
   font-weight: 700;
   font-size: 2.4rem;
   line-height: 3.1rem;
+
+  list-style: none;
+  align-items: center;
 }
 
 body.menu-expanded .menu .links li a {
@@ -180,13 +182,8 @@ body.menu-expanded .menu .links li a {
   text-decoration: none;
 }
 
-body.menu-expanded .menu .links {
-  list-style: none;
-  align-items: center;
-}
-
 body.menu-expanded .menu .social-media {
-  list-style: none;
+  margin-top: 8rem;
 }
 
 body.menu-expanded .menu .social-media path {
@@ -204,21 +201,13 @@ body.menu-expanded .menu .button {
   margin-top: 4.8rem;
 }
 
-body.menu-expanded .menu .social-media {
-  display: flex;
-  flex-direction: row;
-  gap: 3.2rem;
-
-  margin-top: 8rem;
-}
-
 /* ==== HOME ==== */
 #home {
   padding-block: var(--nav-height) 0;
 }
 
 #home::before {
-  content: '';
+  content: "";
   width: 100%;
   height: 108rem;
   background-color: var(--brand-green-light);
@@ -240,6 +229,7 @@ body.menu-expanded .menu .social-media {
 
 #home p {
   margin-top: 2.4rem;
+  font-size: 1.8rem;
 }
 
 #home .button {
@@ -257,10 +247,7 @@ body.menu-expanded .menu .social-media {
 
 #home .stats {
   width: 100%;
-  /* width: 37.5rem; */
-
   background-color: var(--brand-beige);
-  /* margin-inline: 2.4rem; */
   padding-block: 4rem;
   list-style: none;
   border: 1px solid var(--brand-green-light);
@@ -280,4 +267,145 @@ body.menu-expanded .menu .social-media {
   font-size: 1.6rem;
   color: var(--brand-green);
   margin-top: 0;
+}
+
+/* ==== SERVICES ==== */
+#services {
+  padding-block: 10rem;
+}
+
+#services::before {
+  content: "";
+  width: 100%;
+  height: 207rem;
+  background-color: var(--brand-green-light2);
+  display: block;
+  position: absolute;
+  top: 108rem;
+  left: 0;
+  z-index: -1;
+}
+
+#services h1 {
+  margin-bottom: 1.6rem;
+}
+
+#services .services-title {
+  padding-inline: 3rem;
+}
+
+#services .cards {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+  text-align: left;
+}
+
+#services .card {
+  width: 100%;
+  background-color: var(--brand-beige);
+  list-style: none;
+  border: 1px solid var(--brand-green-light);
+  border-radius: 6px;
+  padding: 2.4rem;
+  gap: 1.6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+#services .card h2 {
+  font-size: 2.4rem;
+}
+
+/* ==== ABOUT ==== */
+#about {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+#about::before {
+  content: "";
+  width: 100%;
+  height: 98.9rem;
+  background-color: var(--brand-beige);
+  display: block;
+  position: absolute;
+  top: 315rem;
+  left: 0;
+  z-index: -1;
+}
+
+#about h1 {
+  margin-top: 10rem;
+}
+
+#about h2 {
+  margin-top: 1.6rem;
+}
+
+#about p {
+  margin-top: 2.4rem;
+}
+
+#about img {
+  margin-block: 6rem 10rem;
+}
+
+/* ==== CONTACT ==== */
+#contact {
+  padding-block: 10rem;
+  text-align: left;
+}
+
+#contact h2 {
+  margin-bottom: 3.2rem;
+}
+
+#contact p:nth-child(3) {
+  margin-top: 1.6rem;
+}
+
+#contact .button {
+  display: flex;
+  margin-top: 3.2rem;
+}
+
+#contact img {
+  margin-top: 6rem;
+}
+
+/* ==== FOOTER ==== */
+#footer {
+  padding-top: 6rem;
+  text-align: left;
+}
+
+#footer::before {
+  content: "";
+  width: 100%;
+  height: 28.5rem;
+  background-color: var(--brand-green);
+  display: block;
+  position: absolute;
+  top: 491.4rem;
+  left: 0;
+  z-index: -1;
+}
+
+#footer svg {
+  margin-bottom: 2.4rem;
+}
+
+#footer p {
+  color: var(--white);
+}
+
+#footer p:nth-child(3) {
+  margin-top: 1.2rem;
+}
+
+#footer .social-media {
+  margin-top: 3.2rem;
 }
