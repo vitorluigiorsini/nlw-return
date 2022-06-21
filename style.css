@@ -14,15 +14,15 @@
 
   --nav-height: 7.2rem; /* define a altura da barra de navegação */
 
-  --hue: 170; /* Altera esquema de cores da página */
+  --hue: 255; /* Altera esquema de cores da página */
 
-  --brand-green: hsla(var(--hue), 100%, 26%, 1);
-  --brand-green-light: hsla(calc(var(--hue) - 22), 23%, 89%, 1);
-  --brand-green-light2: hsla(calc(var(--hue) + 10), 14%, 97%, 1);
-  --brand-beige: hsla(39, 100%, 97%, 1);
-  --brand-green-hover: hsla(var(--hue), 100%, 14%, 1);
+  --brand-primary-color: hsla(var(--hue), 53%, 50%, 1);
+  --brand-primary-light: hsla(calc(var(--hue) + 2), 100%, 93%, 1);
+  --brand-primary-light2: hsla(calc(var(--hue) - 3), 100%, 97%, 1);
+  --brand-primary-hover: hsla(var(--hue), 68%, 30%, 1);
   --gray-headline: hsla(210, 11%, 15%, 1);
   --gray-paragraph: hsla(210, 9%, 31%, 1);
+  --brand-beige: hsla(0, 0%, 98%, 1);
   --white: hsla(0, 0%, 100%, 1);
 }
 
@@ -45,7 +45,7 @@ h1 {
   line-height: 150%;
   letter-spacing: 0.08rem;
   transform: uppercase;
-  color: var(--brand-green);
+  color: var(--brand-primary-color);
 }
 
 h2 {
@@ -78,6 +78,23 @@ img {
   gap: 3.2rem;
 }
 
+/* ==== COLOR_ADJUSTMENT ==== */
+.logo path[fill*='#00856F'],
+.menu .button path,
+.button rect[fill*='#00856F'] {
+  fill: var(--brand-primary-color);
+}
+
+nav button path,
+.card path,
+#contact p path {
+  stroke: var(--brand-primary-color);
+}
+
+.card circle {
+  fill: var(--brand-primary-light);
+}
+
 /* ==== NAVIGATION ==== */
 nav {
   height: var(--nav-height);
@@ -94,7 +111,7 @@ nav .wrapper {
 }
 
 nav.scroll {
-  background-color: var(--brand-green);
+  background-color: var(--brand-primary-color);
 }
 
 nav.scroll .logo path {
@@ -140,7 +157,7 @@ body.menu-expanded > :not(nav) {
 body.menu-expanded .menu {
   top: 0;
   left: 0;
-  background: var(--brand-green);
+  background: var(--brand-primary-color);
 
   width: 100vw;
   height: 100vh;
@@ -154,11 +171,11 @@ body.menu-expanded .menu {
   align-items: center;
 }
 
-body.menu-expanded .logo path {
+body.menu-expanded #navigation .logo path {
   fill: white;
 }
 
-body.menu-expanded button path {
+body.menu-expanded #navigation button path {
   stroke: white;
 }
 
@@ -210,7 +227,7 @@ body.menu-expanded .menu .button {
   content: "";
   width: 100%;
   height: 108rem;
-  background-color: var(--brand-green-light);
+  background-color: var(--brand-primary-light);
   display: block;
   position: absolute;
   top: 0;
@@ -250,7 +267,7 @@ body.menu-expanded .menu .button {
   background-color: var(--brand-beige);
   padding-block: 4rem;
   list-style: none;
-  border: 1px solid var(--brand-green-light);
+  border: 1px solid var(--brand-primary-light);
   border-radius: 6px;
 }
 
@@ -265,7 +282,7 @@ body.menu-expanded .menu .button {
 
 #home .stats p {
   font-size: 1.6rem;
-  color: var(--brand-green);
+  color: var(--brand-primary-color);
   margin-top: 0;
 }
 
@@ -278,7 +295,7 @@ body.menu-expanded .menu .button {
   content: "";
   width: 100%;
   height: 207rem;
-  background-color: var(--brand-green-light2);
+  background-color: var(--brand-primary-light2);
   display: block;
   position: absolute;
   top: 108rem;
@@ -306,7 +323,7 @@ body.menu-expanded .menu .button {
   width: 100%;
   background-color: var(--brand-beige);
   list-style: none;
-  border: 1px solid var(--brand-green-light);
+  border: 1px solid var(--brand-primary-light);
   border-radius: 6px;
   padding: 2.4rem;
   gap: 1.6rem;
@@ -386,7 +403,7 @@ body.menu-expanded .menu .button {
   content: "";
   width: 100%;
   height: 28.5rem;
-  background-color: var(--brand-green);
+  background-color: var(--brand-primary-color);
   display: block;
   position: absolute;
   top: 491.4rem;
