@@ -37,6 +37,7 @@ body {
   font-size: 1.6rem;
   text-align: center;
   color: var(--gray-paragraph);
+  background-color: var(--brand-primary-light2);
 }
 
 h1 {
@@ -67,7 +68,7 @@ img {
 }
 
 .wrapper {
-  width: min(39.9rem, 100%);
+  width: min(70rem, 100%);
   margin-inline: auto;
   padding-inline: 2.4rem;
 }
@@ -224,7 +225,7 @@ body.menu-expanded .menu .button {
 }
 
 #home::before {
-  content: "";
+  content: '';
   width: 100%;
   height: 108rem;
   background-color: var(--brand-primary-light);
@@ -259,7 +260,8 @@ body.menu-expanded .menu .button {
   display: flex;
   margin-inline: auto;
   margin-top: 6rem;
-  max-width: min(26.1rem, 100%);
+  max-width: min(40rem, 100%);
+  padding-inline: 3rem;
 }
 
 #home .stats {
@@ -289,18 +291,6 @@ body.menu-expanded .menu .button {
 /* ==== SERVICES ==== */
 #services {
   padding-block: 10rem;
-}
-
-#services::before {
-  content: "";
-  width: 100%;
-  height: 207rem;
-  background-color: var(--brand-primary-light2);
-  display: block;
-  position: absolute;
-  top: 108rem;
-  left: 0;
-  z-index: -1;
 }
 
 #services h1 {
@@ -336,22 +326,14 @@ body.menu-expanded .menu .button {
 }
 
 /* ==== ABOUT ==== */
+.about {
+  background-color: var(--brand-beige);
+}
+
 #about {
   display: flex;
   flex-direction: column;
   text-align: left;
-}
-
-#about::before {
-  content: "";
-  width: 100%;
-  height: 98.9rem;
-  background-color: var(--brand-beige);
-  display: block;
-  position: absolute;
-  top: 315rem;
-  left: 0;
-  z-index: -1;
 }
 
 #about h1 {
@@ -371,6 +353,10 @@ body.menu-expanded .menu .button {
 }
 
 /* ==== CONTACT ==== */
+.contact {
+  background-color: var(--white);
+}
+
 #contact {
   padding-block: 10rem;
   text-align: left;
@@ -382,6 +368,12 @@ body.menu-expanded .menu .button {
 
 #contact p:nth-child(3) {
   margin-top: 1.6rem;
+}
+
+#contact p {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 
 #contact .button {
