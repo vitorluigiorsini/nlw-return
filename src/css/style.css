@@ -116,11 +116,11 @@ img {
 }
 
 #navigation .logo path {
-  -webkit-transition: all .4s ease-in-out;
+  transition: all .4s ease-in-out;
 }
 
 #navigation.scroll {
-  -webkit-transition: all .4s;
+  transition: all .4s;
   background-color: var(--brand-primary-color);
 }
 
@@ -153,10 +153,18 @@ img {
 
 #navMenu > span {
   display: block;
-  width: 2.8rem;
   height: 0.2rem;
   border-radius: 999.9rem;
   background-color: var(--brand-primary-color);
+}
+
+#navMenu > span:nth-child(1),
+#navMenu > span:nth-child(3) {
+  width: 2.8rem;
+}
+
+#navMenu > span:nth-child(2) {
+  width: 2.2rem;
 }
 
 #navMenu > span:not(:last-child) {
@@ -168,7 +176,7 @@ img {
 }
 
 #navMenu.active {
-  transition-delay: 0.8s;
+  transition-delay: 0.4s;
   transform: rotate(45deg);
 }
 
@@ -195,10 +203,11 @@ body.menu-expanded .menu {
   visibility: visible;
 
   background: var(--brand-primary-color);
+  transition: all .8s;
+
   display: flex;
   flex-direction: column;
   align-items: center;
-  -webkit-transition: all .8s;
 }
 
 body.menu-expanded > :not(#navigation) {
