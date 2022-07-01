@@ -86,7 +86,6 @@ img {
   fill: var(--brand-primary-color);
 }
 
-nav button path,
 .card path,
 #contact p path {
   stroke: var(--brand-primary-color);
@@ -111,6 +110,10 @@ nav .wrapper {
   align-items: center;
 }
 
+nav .logo path {
+  transition: all .4s ease-in-out;
+}
+
 nav.scroll {
   background-color: var(--brand-primary-color);
 }
@@ -119,32 +122,63 @@ nav.scroll .logo path {
   fill: white;
 }
 
-nav.scroll button path {
-  stroke: white;
+nav.scroll #navMenu > span {
+  background-color: white;
 }
 
-nav .close-menu,
 .menu {
   position: fixed;
   visibility: hidden;
 }
 
-nav button {
-  background: none;
-  border: none;
+/* ==== NEW_NAV_MENU ==== */
+#navMenu {
   cursor: pointer;
+  z-index: 100;
+}
+
+#navMenu > span {
+  display: block;
+  width: 28px;
+  height: 2px;
+  border-radius: 9999px;
+  background-color: var(--brand-primary-color);
+}
+
+#navMenu > span:not(:last-child) {
+  margin-bottom: 7px;
+}
+
+#navMenu, #navMenu > span {
+  transition: all .4s ease-in-out;
+}
+
+#navMenu.active {
+  transition-delay: 0.8s;
+  transform: rotate(45deg);
+}
+
+#navMenu.active > span:nth-child(2) {
+  width: 0;
+}
+
+#navMenu.active > span:nth-child(1),
+#navMenu.active > span:nth-child(3) {
+  transition-delay: .4s;
+}
+
+#navMenu.active > span:nth-child(1) {
+  transform: translateY(9px);
+}
+
+#navMenu.active > span:nth-child(3) {
+  transform: translateY(-9px) rotate(90deg);
 }
 
 /* ==== MENU_EXPANDED ==== */
-body.menu-expanded .close-menu,
 body.menu-expanded .menu {
   opacity: 1;
   visibility: visible;
-}
-
-body.menu-expanded .open-menu {
-  opacity: 0;
-  visibility: hidden;
 }
 
 body.menu-expanded > :not(nav) {
@@ -152,7 +186,7 @@ body.menu-expanded > :not(nav) {
 }
 
 .menu {
-  transform: translateY(100%);
+  transform: translateY(-100%);
 }
 
 body.menu-expanded .menu {
@@ -165,8 +199,8 @@ body.menu-expanded .menu {
 
   padding-top: 7.2rem;
 
-  transition: transform 400ms;
-  transform: translateY(0);
+  transition: ease-in 1s;
+  transform:translateY(0);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -176,8 +210,8 @@ body.menu-expanded #navigation .logo path {
   fill: white;
 }
 
-body.menu-expanded #navigation button path {
-  stroke: white;
+body.menu-expanded #navMenu > span {
+  background-color: white;
 }
 
 body.menu-expanded .menu .links {
@@ -208,8 +242,7 @@ body.menu-expanded .menu .social-media path {
   fill: white;
 }
 
-body.menu-expanded .logo,
-body.menu-expanded button {
+body.menu-expanded .logo {
   position: relative;
   z-index: 100;
 }
