@@ -66,6 +66,10 @@ p {
   color: var(--gray-paragraph);
 }
 
+a {
+  cursor: pointer;
+}
+
 .wrapper {
   width: min(102.4rem, 100%);
   margin-inline: auto;
@@ -78,25 +82,67 @@ p {
   gap: 3.2rem;
 }
 
+.social-media a img {
+  transition: all .2s;
+}
+
+.social-media a img:hover {
+  transform: scale(1.4);
+}
+
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   color: white;
   background-color: var(--brand-primary-color);
   text-decoration: none;
   font-size: 1.4rem;
   font-weight: 700;
   line-height: 1.8rem;
-  padding: 1.8rem 3.2rem;
-  width: 26.3rem;
+  max-width: 26.3rem;
   height: 5.2rem;
   border-radius: 4rem;
   gap: 1.6rem;
+  transition: .3s;
+}
 
-  display: flex;
+.button:hover {
+  background-color: var(--brand-primary-hover);
+}
+
+.buttonMenu {
+  display: none;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 4rem;
+  transition: all .4s ease-in-out;
+}
+
+/* ==== BACK_TO_TOP_BUTTON ==== */
+#backToTopButton {
+  display: none;
+  position: fixed;
+  right: 2rem;
+  bottom: 2rem;
+  transition: all .2s;
+}
+
+#backToTopButton.active {
+  display: initial;
+}
+
+#backToTopButton:hover {
+  transform: scale(1.4);
 }
 
 /* ==== COLOR_ADJUSTMENT ==== */
+#backToTopButton circle {
+  fill: var(--brand-primary-color);
+}
+
 .card path,
 #contact p path {
   stroke: var(--brand-primary-color);
@@ -109,7 +155,7 @@ p {
 /* ==== NAVIGATION ==== */
 #navigation {
   height: var(--nav-height);
-  width: 100vw;
+  width: 100%;
   display: flex;
   position: fixed;
   top: 0;
@@ -269,24 +315,21 @@ body.menu-expanded .menu .social-media {
   margin-top: 8rem;
 }
 
-body.menu-expanded .menu .social-media path {
-  fill: white;
-}
-
 body.menu-expanded .menu .buttonMenu {
-  display: block;
+  display: flex;
   margin-top: 4.8rem;
-
   color: var(--brand-primary-color);
   background-color: white;
-  text-decoration: none;
   font-size: 1.8rem;
-  font-weight: 700;
   line-height: 2.3rem;
-  padding: 1.6rem 3.2rem;
   width: 27.4rem;
   height: 5.5rem;
-  border-radius: 4rem;
+}
+
+body.menu-expanded .menu .buttonMenu:hover {
+  background-color: var(--brand-primary-color);
+  color: white;
+  border: 1px solid white;
 }
 
 /* ==== HOME ==== */
@@ -510,7 +553,7 @@ footer {
   }
 
   #navMenu,
-  .menu>.social-media {
+  .menu .social-media {
     display: none;
   }
 
@@ -547,20 +590,41 @@ footer {
     transition: all .4s ease-in-out;
   }
 
+  .menu .links li:after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background-color: var(--brand-primary-color);
+    border-radius: 100px;
+    position: relative;
+    margin-inline: auto;
+    bottom: -2.5rem;
+    display: block;
+    transition: width .4s;
+  }
+
+  #navigation.scroll .menu .links li:after,
+  #navigation.scroll .menu .links li:hover:after {
+    background-color: white;
+  }
+
+  .menu .links li:hover:after {
+    width: 100%;
+  }
+
   .menu .buttonMenu {
+    display: flex;
     color: var(--brand-primary-color);
     border: 1px solid var(--brand-primary-color);
-    text-decoration: none;
     font-size: 1.4rem;
-    font-weight: 700;
     line-height: 1.8rem;
-    padding: 1rem 2.4rem;
     width: 22rem;
     height: 3.8rem;
-    border-radius: 4rem;
-    align-items: center;
+  }
 
-    transition: all .4s ease-in-out;
+  .menu .buttonMenu:hover {
+    background-color: var(--brand-primary-color);
+    color: white;
   }
 
   #navigation.scroll .menu .links li a {
@@ -569,7 +633,12 @@ footer {
 
   #navigation.scroll .menu .buttonMenu {
     color: white;
-    border: 1px solid white;
+    border-color: white;
+  }
+
+  #navigation.scroll .menu .buttonMenu:hover {
+    color: var(--brand-primary-color);
+    background-color: white;
   }
 
   /* ==== HOME ==== */
@@ -614,6 +683,8 @@ footer {
 
   #home .stats .stat:not(:first-child) {
     margin-top: initial;
+    border-left: 1px solid var(--brand-primary-color);
+    padding-left: 8rem;
   }
 
   #home .stats h2 {
@@ -721,5 +792,4 @@ footer {
     margin-top: initial;
     justify-content: end;
   }
-
 }

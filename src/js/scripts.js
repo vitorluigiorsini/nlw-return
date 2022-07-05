@@ -3,6 +3,7 @@ window.addEventListener("scroll", onScroll);
 onScroll();
 function onScroll() {
   showNavOnScroll();
+  backToTopButton();
 }
 
 function showNavOnScroll() {
@@ -30,4 +31,13 @@ const navMenu = document.getElementById('navMenu');
 navMenu.addEventListener('click', (event) => {
   actionMenu();
 });
+
+function backToTopButton() {
+  const backTTB = document.getElementById('backToTopButton');
+  if (scrollY >= 300) {
+    backTTB.classList.add('active');
+  } else {
+    backTTB.classList.remove('active');
+  }
+}
 
