@@ -1,8 +1,18 @@
-# doctorcare-teste
+# Doctorcare
 
-Este repositório se trata da construção da página DoctorCare para fins de estudo.
+Página criada utilizando como base a aula NLW-8 da Rocketseat. Nesta página foram implementados códigos HTML, CSS e Javascript.
 
-## Melhorias e implementações do código
+## Funcionalidades
 
-Criar nova Branch para realizar alterações ou implementações no código, a fim de checar primeiramente as mudanças antes de realizar o merge com a Branch principal.
-Isso possibilita maior controle das informações, e aprendizado sobre fluxo de trabalho.
+- Cores diferentes de back-ground utilizando a pseudo-class ::before
+- Manipulação de flexbox e grids
+- Efeitos de transição
+- Hover nos botões e links
+- Responsividade da página
+- Implementação do botão back to top
+
+## Stack utilizadas
+
+- HTML
+- CSS
+- Javascript
