@@ -1,17 +1,20 @@
+![Página Doctorcare](https://i.imgur.com/OUkZX7W.png)
+
 # Doctorcare
 
-Página criada utilizando como base a aula NLW-8 da Rocketseat. Nesta página foram implementados códigos HTML, CSS e Javascript.
+Landing page criada utilizando como base o NLW-8 da Rocketseat. A página foi totalmente implementada sem a tulização de frameworks.
 
-## Funcionalidades
+## Habilidades trabalhadas
 
-- Cores diferentes de back-ground utilizando a pseudo-class ::before
-- Manipulação de flexbox e grids
+- Transição de background das seções da página utilizando pseudo-class
+- Manipulação de flexbox e grid
 - Efeitos de transição
 - Hover nos botões e links
 - Responsividade da página
 - Implementação do botão back to top
+- Criação de variáveis para propriedades de cores e fontes
 
-## Stack utilizadas
+## Stacks utilizadas
 
 - HTML
 - CSS
