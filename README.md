@@ -2,7 +2,7 @@
 
 # Doctorcare
 
-Landing page criada utilizando como base o NLW-8 da Rocketseat. A página foi totalmente implementada sem a utlização de frameworks.
+Landing page criada utilizando como base o NLW-8 da Rocketseat. A página foi totalmente implementada sem a utilização de frameworks.
 
 ## Habilidades trabalhadas
 
