@@ -1,11 +1,12 @@
-![Página Doctorcare](https://i.imgur.com/OUkZX7W.png)
+![Página Doctorcare](https://i.imgur.com/vB9EX1u.png)
 
 # Doctorcare
 
-Landing page criada utilizando como base o NLW-8 da Rocketseat. A página foi totalmente implementada sem a tulização de frameworks.
+Landing page criada utilizando como base o NLW-8 da Rocketseat. A página foi totalmente implementada sem a utlização de frameworks.
 
 ## Habilidades trabalhadas
 
+- Mobile first
 - Transição de background das seções da página utilizando pseudo-class
 - Manipulação de flexbox e grid
 - Efeitos de transição
